@@ -47,7 +47,35 @@
 //code
 const scriptURL = 'https://script.google.com/macros/s/AKfycbyRdPGVb6VrUY9r_pRw14YxP_Y-ghOs6fdm_X2OV9EgUZXmh9s427lKztpQ4SQG6XY/exec'
 const form = document.forms['submit-to-google-sheet']
-const msg = document.getElementById('thank-msg')
+
+form.addEventListener('submit', e => {
+ e.preventDefault();
+
+ Swal.fire({
+    title: 'Submitting...',
+    text: 'Your email is being submitted.',
+    showConfirmButton: false
+ });
+
+
+ fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+ .then(response => {
+    Swal.fire({
+        title: 'Thank you!',
+        text: 'Your email has been submitted successfully.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    });
+
+   
+ } )
+
+ .then(() => { 
+    setTimeout(() => {
+        window.location.reload();
+    }, 3000); // Delay of 4 seconds
+})
+.catch(error => console.error('Error!', error.message)) })
 
 // form.addEventListener('submit', e => {
 //     e.preventDefault();
@@ -78,30 +106,3 @@ const msg = document.getElementById('thank-msg')
 //         });
 //     });
 // });
-
-
-form.addEventListener('submit', e => {
- e.preventDefault();
- fetch(scriptURL, { method: 'POST', body: new FormData(form)})
- .then(response => {
-    Swal.fire({
-        title: 'Thank you!',
-        text: 'Your form has been submitted successfully.',
-        icon: 'success',
-        confirmButtonText: 'OK'
-    });
-
-   
- } )
-
- .then(() => { 
-    setTimeout(() => {
-        window.location.reload();
-    }, 4000); // Delay of 4 seconds
-})
-.catch(error => console.error('Error!', error.message)) })
-
-//  .then(() => { window.location.reload(); })
-//  .catch(error => console.error('Error!', error.message))
-// })
-
