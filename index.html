@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe</title>
+
+    <!-- daisyui and tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- tailwind custom color -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            }
+          }
+        }
+      }
+    </script>
+    <!-- font-awsome -->
+    <script src="https://kit.fontawesome.com/490528312a.js" crossorigin="anonymous"></script>
+  
+    <!-- fav-icon -->
+    <link rel="shortcut icon" href="./Images/2.png" type="image/x-icon">
+ 
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</head>
+<body>
+  <main>
+    <div
+      class="container h-screen flex flex-col  lg:items-center items-start">
+      
+      <section class="hero text-black flex flex-col items-start mt-44">
+          <h1 class="text-4xl font-bold text-start lg:py-5">Coming Soon!</h1>
+          <p class="text-start text-base">Our brand new website is on it's way.</p> 
+          <p class="text-start text-base">Subscribe for more details.</p> 
+          
+              <div class="label pt-5">
+                <span class="label-text">Enter Your Email here.</span>
+              </div>
+
+              <form class="flex min-w-96"
+                method="post" name="submit-to-google-sheet" >
+                <input type="email" name="email" placeholder="Email" class="input input-bordered border-blue-500 rounded-none w-full h-12 max-w-xs" required />
+                <button class="btn btn-neutral rounded-none"><i class="fa-regular fa-paper-plane"></i></button>
+              </form>
+
+              <span id="thank-msg" class="text-start text-base pt-4 text-red-600"> </span>
+         
+      </section>
+
+    </div>
+    
+  </main>
+
+  <script src="javascript.js"></script>
+ 
+
+</body>
+</html>

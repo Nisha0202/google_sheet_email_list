@@ -1,0 +1,25 @@
+body{
+  width: 100%;
+  font-family: 'Orbitron', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background); 
+  
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+:root{
+  --primary: #C83D67;
+  --background: #E4EFF3;
+  --font:#323232;
+  --neutral:#ffffff;
+
+}
+.container{
+  max-width: 1024px;
+  padding: 0px 1rem;
+  margin: 0px auto;
+}
