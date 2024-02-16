@@ -1,6 +1,6 @@
 //google create app script 
 
-// var sheetName = 'Sheet1'
+// var sheetName = 'Sheet1'  //name on the down-left of the google sheet page
 // var scriptProp = PropertiesService.getScriptProperties()
 
 // function intialSetup () {
@@ -75,7 +75,20 @@ form.addEventListener('submit', e => {
         window.location.reload();
     }, 3000); // Delay of 4 seconds
 })
-.catch(error => console.error('Error!', error.message)) })
+
+.catch(error => {
+    console.error('Error!', error.message);
+    Swal.fire({
+        title: 'Submission Failed!',
+        text: 'There was an error submitting your email. Please try again.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+    });
+})
+
+
+})
+
 
 // form.addEventListener('submit', e => {
 //     e.preventDefault();
